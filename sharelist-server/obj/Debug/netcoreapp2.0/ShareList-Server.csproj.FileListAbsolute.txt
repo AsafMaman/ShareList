@@ -1,0 +1,10 @@
+d:\React\ShareList\ShareList-Server\obj\Debug\netcoreapp2.0\ShareList-Server.csproj.CoreCompileInputs.cache
+d:\React\ShareList\ShareList-Server\obj\Debug\netcoreapp2.0\ShareList-Server.AssemblyInfoInputs.cache
+d:\React\ShareList\ShareList-Server\obj\Debug\netcoreapp2.0\ShareList-Server.AssemblyInfo.cs
+d:\React\ShareList\ShareList-Server\bin\Debug\netcoreapp2.0\ShareList-Server.deps.json
+d:\React\ShareList\ShareList-Server\bin\Debug\netcoreapp2.0\ShareList-Server.runtimeconfig.json
+d:\React\ShareList\ShareList-Server\bin\Debug\netcoreapp2.0\ShareList-Server.runtimeconfig.dev.json
+d:\React\ShareList\ShareList-Server\bin\Debug\netcoreapp2.0\ShareList-Server.dll
+d:\React\ShareList\ShareList-Server\bin\Debug\netcoreapp2.0\ShareList-Server.pdb
+d:\React\ShareList\ShareList-Server\obj\Debug\netcoreapp2.0\ShareList-Server.dll
+d:\React\ShareList\ShareList-Server\obj\Debug\netcoreapp2.0\ShareList-Server.pdb

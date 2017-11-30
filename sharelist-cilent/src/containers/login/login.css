@@ -1,0 +1,9 @@
+.loginPage {
+  height: 100%;
+  background-color: #e9ecef; }
+  .loginPage .row {
+    height: 100%; }
+    .loginPage .row .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }

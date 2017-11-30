@@ -1,0 +1,15 @@
+@import '../../styles/custom_variables';
+
+.loginForm{
+    // border:1px solid green;
+    background-color: $gray-100;
+    padding: 30px;
+    .input-group{
+        // border: 1px solid black;
+        margin-bottom: 10px !important;
+    }
+    .message{
+        font-weight: bold;
+        color: $red;
+    }
+}
