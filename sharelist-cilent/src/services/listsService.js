@@ -7,10 +7,19 @@ class listsService{
         return utils.fetch(url,
             {
                 method: "GET",
-                //body: JSON.stringify({Email:email, Password:password})
             }
         )
     }
+
+    createList(list){
+        const url="http://localhost:3000/api/Lists"
+
+        return utils.fetch(url,{
+            method:"POST",
+            body:JSON.stringify(list)
+        })
+    }
+    
 }
 
 export default listsService;

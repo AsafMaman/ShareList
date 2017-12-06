@@ -1,4 +1,4 @@
-import {takeEvery} from 'redux-saga'
+import {takeEvery} from 'redux-saga/effects'
 import {call,put} from 'redux-saga/effects'
 import {push } from 'react-router-redux'
 import {types} from '../modules/authenticationRedux'
@@ -16,7 +16,7 @@ const loginRequest=function* loginRequest(action){
             email:auth.user.email,
         }})
         utils.token=auth.token
-        yield put(push('/app'))
+        yield put(push('/lists'))
     }
     else{
         yield put({type:types.LOGIN_FAILED})
@@ -24,8 +24,15 @@ const loginRequest=function* loginRequest(action){
 }
 
 
-const authenticationSagas=[
-    takeEvery(types.LOGIN_REQUEST,loginRequest),
-]
 
-export default authenticationSagas;
+// const authenticationSagas=[
+//     takeEvery(types.LOGIN_REQUEST,loginRequest),
+// ]
+
+
+export function* loginRequestWatch(){
+    console.log('loginRequestWatch')
+    yield takeEvery(types.LOGIN_REQUEST,loginRequest)
+}
+
+//export default authenticationSagas;

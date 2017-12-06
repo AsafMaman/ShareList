@@ -7,5 +7,6 @@ namespace ShareList.Core.Repositories
     public interface IListRepository
     {
         Task<IEnumerable<List>> GetListsAsync(string userId);
+        Task<string> AddListAsync(List list);
     }
 }

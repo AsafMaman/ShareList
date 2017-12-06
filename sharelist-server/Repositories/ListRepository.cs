@@ -31,5 +31,13 @@ namespace ShareList.Repository
             
         }
 
+        public async Task<string> AddListAsync(List list){
+            // var document =new BsonDocument{
+            //     {"name",BsonValue.Create(list.Name)}
+            // };
+            await _listCollection.InsertOneAsync(list);
+            return "ok";
+        }
+
     }
 }

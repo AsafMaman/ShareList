@@ -6,7 +6,7 @@ import { ConnectedRouter} from 'react-router-redux';
 
 import Login from './containers/login';
 import Authorization from './containers/Authorization';
-import Lists from './containers/Lists';
+import Shared from './containers/shared';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -20,9 +20,10 @@ class App extends Component {
       <Provider store={store}>
       <ConnectedRouter history={hs}>
         <Switch>
-          <Route path="/" exact component={Login}/>
           <Route path="/Login"  exact component={Login}/>
-          <Authorization path="/app" component={Lists}/>
+          {/* <Route path="/" exact component={Login}/> */}
+          
+          <Authorization path="/" component={Shared}/>
         </Switch>
       </ConnectedRouter>
       </Provider>
