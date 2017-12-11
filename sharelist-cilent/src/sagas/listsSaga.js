@@ -10,13 +10,14 @@ const fetchList=function* fetchList(action){
     console.log(lists)
     !!lists?
         yield put(actions.fetchListsSuccess(lists))
-        :yield put(action.fetchListsfailed())
+        :yield put(actions.fetchListsfailed())
 }
 
 const createList=function* createList(action){
     let service = new listsSrvice()
-    console.log('saga create list:' +action)
-    var list =yield call([service,service.createList],action.payload)
+    yield call([service,service.createList],action.payload)
+    yield put(actions.createListSucceeded())
+    yield put(actions.fetchLists())
 }
 
 export function* fetchListWatch(){

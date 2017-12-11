@@ -1,8 +1,9 @@
 import React,{Component} from 'react'
 import {actions} from '../../modules/listsRedux'
 import {connect} from 'react-redux'
-import { Button} from 'reactstrap'
+import { Button,Container,Row,Col} from 'reactstrap'
 import  CreateListModal from '../../components/createListModal'
+import Table from '../../components/table'
 
 
 class Lists extends Component{
@@ -15,45 +16,49 @@ class Lists extends Component{
     // }
     componentDidMount(){
         this.props.fetchLists()
+        this.tableConfig={
+            columnDefs:[
+                {title:"Id",data:"id",targets:0},
+                {title:"Name",data:"name",targets:1},
+                {title:"Description",data:"description",targets:2},
+            ]
+        };
     }
 
     openModal=()=>{
         this.props.openModal()
     }
-
-    toggle=()=>{
-        if(this.props.lists.isModalOpen){
-            this.props.closeModal()
-        }
-        else{
-            this.props.openModal()
-        }
+    closeModal=()=>{
+        this.props.closeModal()
     }
-
-    createList=()=>{
-        console.log('create list')
-        let values=this.props.listForm.values
-        this.props.createList(values)
-
+   
+    createList=(list)=>{
+        let temp=this.props.createList(list)
     }
 
     render() {
-        console.log('init');
         const {isModalOpen,lists}=this.props.lists
-        let liList
-        if(lists){
-            liList=lists.map(l=><li>{l.name + " - " +l.description}</li>)
-        }
         
         return(
-            <div>
-                <div>List screen</div>
-                <ul>
-                    {liList}
-                </ul>
-                <Button color="danger" onClick={ e=>{ e.preventDefault();this.openModal()}}> Open Modal </Button>
-                <CreateListModal isOpen={isModalOpen} toggle={e=>{this.toggle()}} onSubmit={e=>{this.createList()}} ></CreateListModal>
-            </div>
+            // <div className="container">
+            <Container fluid>
+                <Row>
+                    <Col xs="12">
+                        <h1>Lists Screen</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12">
+                        <Table config={this.tableConfig} data={lists}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12">
+                        <Button color="success" onClick={this.openModal}> Create New List </Button>
+                    </Col>
+                </Row>
+                <CreateListModal isOpen={isModalOpen} close={this.closeModal}  onSubmit={this.createList} ></CreateListModal>
+            </Container>
         )
     }
 }

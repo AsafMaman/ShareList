@@ -10,18 +10,17 @@ class Shared extends Component{
     constructor(props){
         super(props)
         this.state = {isOpen: false};
-        console.log(this.state)
     }
 
     toggle=(e) =>{
         this.setState({isOpen: !this.state.isOpen})
     }
     render(){
-        console.log('render:'+this.state.dropdownOpen)
         return(
             <div>
-                <Navbar color="dark" className="navbar-dark navbar-expand-sm" toggleable fixed="top">
-                    <NavbarBrand><NavLink className="nav-link" to="/lists">Share List</NavLink></NavbarBrand>
+                <Navbar color="dark" className="navbar-dark navbar-expand-sm" expand fixed="top">
+                    {/* <NavbarBrand><NavLink className="nav-link" to="/lists">Share List</NavLink></NavbarBrand> */}
+                    <NavbarBrand href="/lists">Share List</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -39,8 +38,7 @@ class Shared extends Component{
                         <Route path="/lists"  component={List}/>
                         <Route path="/about"  component={About}/>
                     </Switch>
-                </div>
-                
+                </div>    
             </div>
         )
     }

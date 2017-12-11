@@ -31,7 +31,6 @@ const loginRequest=function* loginRequest(action){
 
 
 export function* loginRequestWatch(){
-    console.log('loginRequestWatch')
     yield takeEvery(types.LOGIN_REQUEST,loginRequest)
 }
 

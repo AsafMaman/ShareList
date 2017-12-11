@@ -15,8 +15,8 @@ const routerMw = routerMiddleware(history);
 
 
 if (process.env.NODE_ENV === 'development') {
-    const { logger } = require('redux-logger')
-    middlewares.push(logger)
+    // const { logger } = require('redux-logger')
+    // middlewares.push(logger)
 }
 
 middlewares.push(sagaMiddleware,routerMw);
@@ -24,6 +24,7 @@ middlewares.push(sagaMiddleware,routerMw);
 const configureStore=()=>{
     const store=createStore(
         rootReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
         compose(
             applyMiddleware(...middlewares)
         )

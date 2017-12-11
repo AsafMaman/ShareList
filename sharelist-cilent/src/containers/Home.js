@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Home=()=>{
-    console.log('Home screen');
     return(
         <div>
         <h1>Home screen</h1>

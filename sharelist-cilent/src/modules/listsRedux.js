@@ -7,7 +7,9 @@ export const types={
     OPEN_MODAL:'LISTS/OPEN_MODAL',
     CLOSE_MODAL:'LISTS/CLOSE_MODAL',
 
-    CREATE_LIST:'LISTS/CREATE_LIST'
+    CREATE_LIST:'LISTS/CREATE_LIST',
+    CREATE_LIST_SUCCEEDED:"LISTS/CREATE_LIST_SUCCEEDED",
+    CREATE_LIST_FAILED:"LISTS/CREATE_LIST_FAILED"
 }
 /* ------------- Action Creators ------------- */
 export const actions= {
@@ -18,7 +20,8 @@ export const actions= {
     openModal:()=>({type:types.OPEN_MODAL}),
     closeModal:() =>({type:types.CLOSE_MODAL}),
 
-    createList:(list) =>({type:types.CREATE_LIST,payload:list})
+    createList:(list) =>({type:types.CREATE_LIST,payload:list}),
+    createListSucceeded:() =>({type:types.CREATE_LIST_SUCCEEDED})
 }
 /* ------------- Initial State ------------- */
 const initalState={
@@ -41,6 +44,9 @@ export default(state=initalState,action)=>{
         }
 
         case types.CLOSE_MODAL:{
+            return {...state,isModalOpen:false}
+        }
+        case types.CREATE_LIST_SUCCEEDED:{
             return {...state,isModalOpen:false}
         }
         default:{
