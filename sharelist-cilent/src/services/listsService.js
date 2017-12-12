@@ -20,6 +20,13 @@ class listsService{
         })
     }
     
+    deleteList(listId){
+        const url="http://localhost:3000/api/Lists/" +listId
+
+        return utils.fetch(url,{
+            method:"Delete",
+        })
+    }
 }
 
 export default listsService;

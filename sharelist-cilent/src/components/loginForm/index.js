@@ -1,7 +1,7 @@
-import React from 'react';
-import {Field,reduxForm} from 'redux-form';
-import Icon from '../Icon';
-import {ICONS} from '../../styles/Icons/Icons';
+import React from 'react'
+import {Field,reduxForm} from 'redux-form'
+import Icon from '../Icon'
+import {ICONS} from '../../styles/Icons/Icons'
 
 import './loginForm.css'
 

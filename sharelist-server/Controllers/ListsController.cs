@@ -30,7 +30,18 @@ namespace ShareList{
         {
             var userId=User.FindFirst("UserId").Value;
             list.UserId=userId;
-            var temp=await _listService.AddListAsync(list);
+            await _listService.AddListAsync(list);
+            return Ok("list Created.");
+        }
+
+        [Authorize(Policy="Member")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(string id)
+        {
+            // var userId=User.FindFirst("UserId").Value;
+            // var list = new List{Id=id,UserId=userId};
+            
+            await _listService.DeleteListAsync(id);
             return Ok("list Created.");
         }
     }

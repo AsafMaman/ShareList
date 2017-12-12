@@ -39,5 +39,13 @@ namespace ShareList.Repository
             return "ok";
         }
 
+         public async Task<string> DeleteListAsync(string listId){
+            // var document =new BsonDocument{
+            //     {"name",BsonValue.Create(list.Name)}
+            // };
+            await _listCollection.DeleteOneAsync(l=>l.Id==listId);
+            return "ok";
+        }
+
     }
 }

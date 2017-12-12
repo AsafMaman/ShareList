@@ -20,10 +20,21 @@ const createList=function* createList(action){
     yield put(actions.fetchLists())
 }
 
+const deleteList=function* createList(action){
+    let service = new listsSrvice()
+    yield call([service,service.deleteList],action.payload)
+    yield put(actions.deleteListSucceeded())
+    yield put(actions.fetchLists())
+}
+
 export function* fetchListWatch(){
     yield takeEvery(types.FETCH_LISTS,fetchList)
 }
 
 export function* createListWatch(){
     yield takeEvery(types.CREATE_LIST,createList)
+}
+
+export function* deleteListWatch(){
+    yield takeEvery(types.DELETE_LIST,deleteList)
 }

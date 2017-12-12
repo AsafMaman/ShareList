@@ -12,6 +12,8 @@ namespace ShareList.Services{
         }
         public async Task<IEnumerable<List>> GetListsAsync(string userId) => await _listRepository.GetListsAsync(userId);
         public async Task<string> AddListAsync(List list) =>await _listRepository.AddListAsync(list);
+
+        public async Task<string> DeleteListAsync(string listId) =>await _listRepository.DeleteListAsync(listId);
          
     }
 }

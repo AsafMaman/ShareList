@@ -8,5 +8,6 @@ namespace ShareList.Core.Repositories
     {
         Task<IEnumerable<List>> GetListsAsync(string userId);
         Task<string> AddListAsync(List list);
+        Task<string> DeleteListAsync(string listId);
     }
 }

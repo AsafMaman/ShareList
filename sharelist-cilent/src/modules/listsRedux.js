@@ -9,7 +9,11 @@ export const types={
 
     CREATE_LIST:'LISTS/CREATE_LIST',
     CREATE_LIST_SUCCEEDED:"LISTS/CREATE_LIST_SUCCEEDED",
-    CREATE_LIST_FAILED:"LISTS/CREATE_LIST_FAILED"
+    CREATE_LIST_FAILED:"LISTS/CREATE_LIST_FAILED",
+
+    DELETE_LIST:'LISTS/DELETE_LIST',
+    DELETE_LIST_SUCCEEDED:"LISTS/DELETE_LIST_SUCCEEDED",
+    DELETE_LIST_FAILED:"LISTS/DELETE_LIST_FAILED"
 }
 /* ------------- Action Creators ------------- */
 export const actions= {
@@ -21,7 +25,10 @@ export const actions= {
     closeModal:() =>({type:types.CLOSE_MODAL}),
 
     createList:(list) =>({type:types.CREATE_LIST,payload:list}),
-    createListSucceeded:() =>({type:types.CREATE_LIST_SUCCEEDED})
+    createListSucceeded:() =>({type:types.CREATE_LIST_SUCCEEDED}),
+
+    deleteList:(listId) =>({type:types.DELETE_LIST,payload:listId}),
+    deleteListSucceeded:() =>({type:types.DELETE_LIST_SUCCEEDED})
 }
 /* ------------- Initial State ------------- */
 const initalState={
